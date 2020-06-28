@@ -12,6 +12,8 @@ namespace SimbirSoft_Test
         static void Main(string[] args)
         {
             Console.WriteLine("Hello");
+            Console.WriteLine("Press any key to Start");
+            Console.ReadKey();
             Program program = new Program();
             program.Start();
             Console.WriteLine("Press any key to Escape");
