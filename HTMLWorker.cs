@@ -20,17 +20,22 @@ namespace SimbirSoft_Test
 
         public void SaveHTMLPages()
         {
-            for(int i = 0; i < site.Length; i++)
-            {
-                using (WebClient client = new WebClient())
+            for (int i = 0; i < site.Length; i++) {
+                try 
                 {
-                    string directory = Directory.GetCurrentDirectory();
-                    Console.WriteLine(site[i].ToString());
-                    string html = client.DownloadString(site[i].ToString());
-                    File.WriteAllText(directory + @"\" + i + ".html", html);
-                    Console.WriteLine("File save");
+                    using (WebClient client = new WebClient()) {
+                        string directory = Directory.GetCurrentDirectory();
+                        Console.WriteLine(site[i].ToString());
+                        string html = client.DownloadString(site[i].ToString());
+                        File.WriteAllText(directory + @"\" + i + ".html", html);
+                        Console.WriteLine("File save");
+                    }
                 }
-            }            
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error : " + e.ToString());
+                }
+            }
         }
     }
 }
