@@ -10,6 +10,7 @@ namespace SimbirSoft_Test
     {
         public string[] site { get; private set; }
         public List<string> words = new List<string>();
+
         public HTMLWorker(string[] sites)
         {
             site = sites;
@@ -24,7 +25,7 @@ namespace SimbirSoft_Test
                     string directory = Directory.GetCurrentDirectory();
                     Console.WriteLine(site[i].ToString());
                     string html = client.DownloadString(site[i].ToString());
-                    File.WriteAllText(directory + @"\" + i, html);
+                    File.WriteAllText(directory + @"\" + i + ".html", html);
                     //Console.WriteLine(html);
                 }
             }            

@@ -24,26 +24,9 @@ namespace SimbirSoft_Test
             HTMLWorker htmlWorker;
             var urldata = fileWorker.ReadFile();
             Console.WriteLine(urldata);
-            //htmlWorker = new HTMLWorker(urldata);
-            //using (WebClient client = new WebClient())
-            //{
-            //    string html = client.DownloadString("http://stackoverflow.com");
-            //    //Do something with html then
-            //    Console.WriteLine(html);
-            //}
+            htmlWorker = new HTMLWorker(urldata);
+            htmlWorker.SaveHTMLPages();
 
-            //htmlWorker.SaveHTMLPages();
-
-            //HttpClient httpclient = new HttpClient();
-            //var result = httpclient.GetStringAsync(new Uri("https://www.microsoft.com/en-sg/"));
-            //File.WriteAllText("test.html", result);
-
-            var htmlDoc = new HtmlDocument();
-            htmlDoc.LoadHtml("https://www.microsoft.com");
-
-            FileStream sw = new FileStream("FileStream.html", FileMode.Create);
-
-            htmlDoc.Save(sw, Encoding.UTF8);
         }
     }
 }
