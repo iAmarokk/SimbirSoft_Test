@@ -8,8 +8,10 @@ namespace SimbirSoft_Test
 {
     public class HTMLWorker
     {
+        /// <summary>
+        /// Save site to local folder
+        /// </summary>
         public string[] site { get; private set; }
-        public List<string> words = new List<string>();
 
         public HTMLWorker(string[] sites)
         {
@@ -26,7 +28,7 @@ namespace SimbirSoft_Test
                     Console.WriteLine(site[i].ToString());
                     string html = client.DownloadString(site[i].ToString());
                     File.WriteAllText(directory + @"\" + i + ".html", html);
-                    //Console.WriteLine(html);
+                    Console.WriteLine("File save");
                 }
             }            
         }

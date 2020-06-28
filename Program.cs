@@ -22,11 +22,13 @@ namespace SimbirSoft_Test
         {
             FileWorker fileWorker = new FileWorker();
             HTMLWorker htmlWorker;
+            WordWorker wordWorker;
             var urldata = fileWorker.ReadFile();
             Console.WriteLine(urldata);
             htmlWorker = new HTMLWorker(urldata);
             htmlWorker.SaveHTMLPages();
-
+            wordWorker = new WordWorker(urldata);
+            wordWorker.Work();
         }
     }
 }
